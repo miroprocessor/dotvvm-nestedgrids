@@ -22,11 +22,11 @@
                             <dot:GridViewTextColumn ValueBinding="{value: Score}" HeaderText="Score" IsEditable="true" />
                             <dot:GridViewTemplateColumn>
                                 <ContentTemplate>
-                                    <dot:Button Text="Edit" Click="{command: _parent2.EditGrade(_this)}" />
+                                    <dot:Button Text="Edit Grade" Click="{command: _root.EditGrade(_parent, _this)}" />
                                 </ContentTemplate>
                                 <EditTemplate>
-                                    <dot:Button Text="Save" Click="{command: _parent2.UpdateGrade(_this)}" />
-                                    <dot:Button Text="Cancel" Click="{command: _parent2.CancelEdit()}" />
+                                    <dot:Button Text="Save Grade" Click="{command: _root.UpdateGrade(_this)}" />
+                                    <dot:Button Text="Cancel Edit Grade" Click="{command: _root.CancelEditGrade()}" />
                                 </EditTemplate>
                             </dot:GridViewTemplateColumn>
                         </Columns>
@@ -35,16 +35,13 @@
                 <dot:GridViewTemplateColumn IsEditable="false">
                     <dot:RouteLink Text="{resource: Texts.Label_Detail}" RouteName="CRUD_Detail" Param-Id="{{value: Id}}" />
                 </dot:GridViewTemplateColumn>
-                <dot:GridViewTemplateColumn IsEditable="false">
-                    <dot:RouteLink Text="{resource: Texts.Label_Edit}" RouteName="CRUD_Edit" Param-Id="{{value: Id}}" />
-                </dot:GridViewTemplateColumn>
                 <dot:GridViewTemplateColumn>
                     <ContentTemplate>
-                        <dot:Button Text="Edit" Click="{command: _parent.EditStudent(_this)}" />
+                        <dot:Button Text="Edit" Click="{command: _root.EditStudent(_this)}" />
                     </ContentTemplate>
                     <EditTemplate>
-                        <dot:Button Text="Save" Click="{command: _parent.UpdateStudent(_this)}" />
-                        <dot:Button Text="Cancel" Click="{command: _parent.CancelEdit()}" />
+                        <dot:Button Text="Save" Click="{command: _root.UpdateStudent(_this)}" />
+                        <dot:Button Text="Cancel" Click="{command: _root.CancelEditStudent()}" />
                     </EditTemplate>
                 </dot:GridViewTemplateColumn>
             </Columns>

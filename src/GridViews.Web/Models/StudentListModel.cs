@@ -1,5 +1,4 @@
 ﻿using DotVVM.Framework.Controls;
-using DotVVM.Framework.ViewModel;
 using System.Collections.Generic;
 
 namespace GridViews.Web.Models
@@ -12,7 +11,7 @@ namespace GridViews.Web.Models
 
         public List<GradeModel> StudentGrades { get; set; }
 
-        [Bind(Direction.ServerToClient)]
+        //  [Bind(Direction.ServerToClient)]
         public GridViewDataSet<GradeModel> Grades { get; set; }
     }
 }

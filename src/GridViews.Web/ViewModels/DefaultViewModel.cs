@@ -19,7 +19,7 @@ namespace GridViews.Web.ViewModels
             _studentService = studentService;
         }
 
-        [Bind(Direction.ServerToClient)]
+        //[Bind(Direction.ServerToClient)]
         public GridViewDataSet<StudentListModel> Students { get; set; } = new GridViewDataSet<StudentListModel>()
         {
             RowEditOptions = { PrimaryKeyPropertyName = "Id" }
@@ -43,9 +43,9 @@ namespace GridViews.Web.ViewModels
             await base.PreRender();
         }
 
-        public void EditGrade(GradeModel grade)
+        public void EditGrade(StudentListModel student, GradeModel grade)
         {
-            var student = Students.Items.Where(x => x.Grades.Items.Any(y => y.GradeId == grade.GradeId)).First();
+            //var student = Students.Items.Where(x => x.Grades.Items.Any(y => y.GradeId == grade.GradeId)).First();
             student.Grades.RowEditOptions.EditRowId = grade.GradeId;
         }
 
@@ -60,8 +60,14 @@ namespace GridViews.Web.ViewModels
             Students.RowEditOptions.EditRowId = student.Id;
         }
 
-        public void CancelEdit()
+        public void CancelEditGrade()
         {
+        }
+
+        public void CancelEditStudent()
+        {
+            Students.RowEditOptions.EditRowId = null;
+            Students.RequestRefresh();
         }
     }
 }
