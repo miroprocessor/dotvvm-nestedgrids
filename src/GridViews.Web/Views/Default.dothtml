@@ -15,7 +15,7 @@
                 <dot:GridViewTextColumn ValueBinding="{value: FirstName}" HeaderText="{resource: Texts.Label_Firstname}" IsEditable="true" />
                 <dot:GridViewTextColumn ValueBinding="{value: LastName}" HeaderText="{resource: Texts.Label_Lastname}" IsEditable="true" />
                 <dot:GridViewTemplateColumn HeaderText="Grades" IsEditable="false">
-                    <dot:GridView DataSource="{value: _this.Grades}" class="page-grid">
+                    <dot:GridView DataSource="{value: Grades}" class="page-grid" InlineEditing="true">
                         <Columns>
                             <dot:GridViewTextColumn ValueBinding="{value: Subject}" HeaderText="Subject" IsEditable="false" />
                             <dot:GridViewTextColumn ValueBinding="{value: Month}" HeaderText="Month" IsEditable="false" />

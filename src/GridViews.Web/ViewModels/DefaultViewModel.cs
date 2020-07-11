@@ -53,7 +53,9 @@ namespace GridViews.Web.ViewModels
         { }
 
         public void UpdateStudent(StudentListModel model)
-        { }
+        {
+            Students.RowEditOptions.EditRowId = null;
+        }
 
         public void EditStudent(StudentListModel student)
         {
